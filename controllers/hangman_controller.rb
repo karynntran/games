@@ -1,1 +1,2 @@
-hangman_controller.rb
+class HangmanController < ApplicationController
+end

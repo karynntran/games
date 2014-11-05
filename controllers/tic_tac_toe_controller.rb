@@ -1,1 +1,2 @@
-tic_tac_toe_controller.rb
+class TicTacToeController < ApplicationController
+end

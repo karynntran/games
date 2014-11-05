@@ -1,1 +1,2 @@
-word.rb
+class Word
+end
