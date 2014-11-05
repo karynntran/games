@@ -9,6 +9,15 @@
   	<script src="scripts/jquery.timeago.js" type="text/javascript"></script>
   <script src="scripts/ready.js" type="text/javascript"></script>
 </head>
+
+	<header class = "navigation">
+		<% if @current_user %>
+    		<%= erb :'_homepage_nav_for_users'%>
+  		<% else %>
+    		<%= erb :'_homepage_nav_for_nonusers'%>
+  		<% end %>
+	</header>
+
 <body>
 	<%= yield %>
 </body>
