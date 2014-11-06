@@ -9,8 +9,9 @@ class HangmanController < ApplicationController
     content_type :json
 
     words = Word.all
-    one_word = words.sample[:body]
-    one_word.to_json
+    mystery_word = words.sample[:body]
+
+    mystery_word.to_json
   end
 
 end

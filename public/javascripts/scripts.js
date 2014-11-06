@@ -12,6 +12,8 @@ function startGame(){
 	//want to start a new game of hangman (maybe add values to database to set game state?)
 }
 
+// ** generate secret word ** //
+
 function generateWord(){
 	// debugger;
 	$.ajax({
@@ -19,14 +21,14 @@ function generateWord(){
 		method: "GET",
 		dataType: "json",
 		success: function(data) {
-			word = data;
-			makeLetterDivs(word);
+			mystery_word = data;
+			makeLetterDivs(mystery_word);
 		}
 	});
 }
 
-function makeLetterDivs(word){
-	for (var i=0; i < word.length; i++) {
+function makeLetterDivs(mystery_word){
+	for (var i=0; i < mystery_word.length; i++) {
 			var div = document.createElement("div");
 			div.style.width = "50px";
 			div.style.height = "50px";
@@ -34,10 +36,17 @@ function makeLetterDivs(word){
 			div.style.background = "lightgray";
 			div.style.padding = "10px";
 			div.style.margin = "10px";
-			// div.innerHTML = word[i];
-			$('#random-word').append(div);
+			// div.innerHTML = mystery_word[i];
+			$('#mystery-word').append(div);
 			};
 };
+
+// ** letter guess ** //
+
+
+
+// ** word guess ** //
+
 
 
 
