@@ -7,6 +7,11 @@ var context;
 
 //  ** Hangman ** //
 
+function startGame(){
+	generateWord();
+	//want to start a new game of hangman (maybe add values to database to set game state?)
+}
+
 function generateWord(){
 	// debugger;
 	$.ajax({
@@ -29,7 +34,7 @@ function makeLetterDivs(word){
 			div.style.background = "lightgray";
 			div.style.padding = "10px";
 			div.style.margin = "10px";
-			div.innerHTML = word[i];
+			// div.innerHTML = word[i];
 			$('#random-word').append(div);
 			};
 };
@@ -40,6 +45,6 @@ function makeLetterDivs(word){
 $(function(){
 	$('.start-game').on("click", function(e){
     e.preventDefault(); // return false;
-    generateWord();
+    startGame();
   });
 });

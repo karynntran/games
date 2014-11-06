@@ -14,15 +14,21 @@
 
 <!-- start game -->
 
-<input class="start-game" type="submit" value="Start a Game">
+	<input class="start-game" type="submit" value="Start a Game">
 
 <!-- guess a letter -->
 
-<input class="letter-guess" type="submit" value="Guess a Letter">
+<form action="/hangman" method="post">
+	<input type="text" name="letter_guess" placeholder="Guess a letter">
+	<input class="letter-guess" type="submit" value="Guess a Letter">
+</form>
 
 <!-- guess the whole word -->
 
-<input class="word-guess" type="submit" value="Guess the Whole Word">
+<form action="/hangman" method="post">
+	<input type="text" name="word_guess" placeholder="Guess a letter">
+	<input class="word-guess" type="submit" value="Guess the Whole Word">
+</form>
 
 <!-- random word is generated -->
 
