@@ -5,6 +5,7 @@ console.log(":)");
 var word; 
 var context;
 
+
 //  ** Hangman ** //
 
 function startGame(){
@@ -12,10 +13,9 @@ function startGame(){
 	//want to start a new game of hangman (maybe add values to database to set game state?)
 }
 
-// ** generate secret word ** //
+// ** generate mystery word ** //
 
 function generateWord(){
-	// debugger;
 	$.ajax({
 		url: "/hangman/words",
 		method: "GET",
@@ -28,6 +28,7 @@ function generateWord(){
 }
 
 function makeLetterDivs(mystery_word){
+
 	for (var i=0; i < mystery_word.length; i++) {
 			var div = document.createElement("div");
 			div.style.width = "50px";
@@ -36,7 +37,7 @@ function makeLetterDivs(mystery_word){
 			div.style.background = "lightgray";
 			div.style.padding = "10px";
 			div.style.margin = "10px";
-			// div.innerHTML = mystery_word[i];
+			div.innerHTML = mystery_word[i];
 			$('#mystery-word').append(div);
 			};
 };
@@ -54,6 +55,7 @@ function makeLetterDivs(mystery_word){
 $(function(){
 	$('.start-game').on("click", function(e){
     e.preventDefault(); // return false;
+    $('#mystery-word').empty();
     startGame();
   });
 });
