@@ -10,22 +10,24 @@ var context;
 
 
 function startGame(){
-	generateWord();
+	$.ajax({
+		url: "/hangman/start_game",
+		method: "GET",
+		dataTYPE: "json",
+		success: function(data) {
+			var new_game = data;
+			displayGameState(new_game);
+			gameId = data.id;
+		}
+	})
 	//want to start a new game of hangman (maybe add values to database to set game state?)
 }
 
 // ** generate mystery word ** //
 
-function startGame(){
-	$.ajax({
-		url: "/hangman",
-		method: "GET",
-		dataType: "json",
-		success: function(data) {
-			mystery_word = data;
-			makeLetterDivs(mystery_word);
-		}
-	});
+function displayGameState(game){
+	$('#mystery-word').empty();
+	makeLetterDivs(game.game_state);
 }
 
 function makeLetterDivs(mystery_word){
@@ -38,25 +40,15 @@ function makeLetterDivs(mystery_word){
 			div.style.background = "lightgray";
 			div.style.padding = "10px";
 			div.style.margin = "10px";
-			// div.innerHTML = mystery_word[i];
+			div.innerHTML = mystery_word[i];
 			$('#mystery-word').append(div);
 			};
 };
 
 // ** letter guess ** //
-
-
+function updateGameState(game) {	
+	displayGameState(game);
+}
 
 // ** word guess ** //
 
-
-
-
-//  ** Onload Function ** //
-$(function(){
-	$('.start-game').on("click", function(e){
-    e.preventDefault(); // return false;
-    $('#mystery-word').empty();
-    startGame();
-  });
-});

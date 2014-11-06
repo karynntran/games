@@ -14,17 +14,22 @@
 
 <!-- start game -->
 
-	<input class="start-game" type="submit" value="Start a Game">
+<input class="start-game" type="submit" value="Start a Game">
 
 <!-- guess a letter -->
+
 <h3>Guess a letter</h3>
 <div id="guess-letter">
 	<% @letters.each do |letter| %>
-		<input class="guess-letter" type = "submit" value="<%=letter%>">
+		<button class="guess-letter" data-letter="<%=letter%>">
+			<%= letter %>
+		</button>
 	<% end %>
 </div>
 <br>
+
 <!-- guess the whole word -->
+
 <h3>Guess the whole word</h3>
 <form action="/hangman" method="post">
 	<input type="text" name="word_guess" placeholder="Guess a letter">
@@ -32,6 +37,34 @@
 </form>
 
 <!-- random word is generated -->
+
 <h3>This is your mystery word</h3>
 <div id="mystery-word">
 </div>
+
+
+<script>
+//  ** Onload Function ** //
+$(function(){
+	gameId = undefined; // startGame defines this
+	$('.start-game').on("click", function(e){
+    e.preventDefault(); // return false;    
+    startGame();
+  });
+
+  $('.guess-letter').on('click', function(e) {
+  	e.preventDefault();
+  	var letter = $(this).data('letter');  
+  	$.ajax({
+  		url: '/hangman/letter-guess',
+  		method: 'PATCH',
+  		dataType: 'json',
+  		data: {
+  			guess: letter,
+  			gameId: gameId
+  		},
+  		success: updateGameState
+  	});
+  });
+});
+</script>
