@@ -45,10 +45,11 @@ function makeLetterDivs(mystery_word){
 			};
 };
 
-// ** letter guess ** //
+// ** guesses ** //
 function updateGameState(game) {	
 	displayGameState(game);
 }
 
 // ** word guess ** //
+
 

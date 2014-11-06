@@ -2,11 +2,14 @@ class HangmanGame < ActiveRecord::Base
 
   before_create :update_game_state, :zero_bad_guesses
 
-  def guess_word(word)
+### guesses ###
 
-    #word
-    #game_state
-    #bad_guessess
+  def guess_word(word)
+    if self.word == word
+      puts "YOU WIN!"
+    else
+      self.bad_guesses += 1
+    end
   end
 
   def guess_letter(letter)
@@ -19,8 +22,10 @@ class HangmanGame < ActiveRecord::Base
     self.save
   end
 
+### game state setup ###
+
   def obfuscate(word, exceptions="")
-    word.gsub(/[^\s#{exceptions}]/, '_')
+    word.gsub(/[^\s#{exceptions}]/, '?')
   end
 
   def update_game_state

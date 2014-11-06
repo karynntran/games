@@ -25,8 +25,14 @@ class HangmanController < ApplicationController
     game.to_json
   end
 
-  patch '/guess_answer' do
-    #update game state?
+### guesses ###
+
+  patch '/word-guess' do
+    game_id = params[:gameId]
+    guessed_word = params[:guess]
+    game = HangmanGame.find(game_id)
+    game.guess_word(guessed_word)
+    game.to_json
   end
 
   patch '/letter-guess' do
