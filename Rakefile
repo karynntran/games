@@ -23,6 +23,12 @@ namespace :db do
     Word.create({body: "monkey"})
     Word.create({body: "banana"})
     Word.create({body: "jungle"})
+    Word.create({body: "fruit"})
+    Word.create({body: "elephant"})
+    Word.create({body: "trees"})
+    Word.create({body: "swing"})
+    Word.create({body: "vine"})
+    Word.create({body: "lemur"})
 
   end
 

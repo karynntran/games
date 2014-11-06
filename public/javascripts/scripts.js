@@ -2,11 +2,12 @@ console.log(":)");
 
 //  ** Global ** //
 
-var word; 
+var mystery_word; 
 var context;
 
 
 //  ** Hangman ** //
+
 
 function startGame(){
 	generateWord();
@@ -15,9 +16,9 @@ function startGame(){
 
 // ** generate mystery word ** //
 
-function generateWord(){
+function startGame(){
 	$.ajax({
-		url: "/hangman/words",
+		url: "/hangman",
 		method: "GET",
 		dataType: "json",
 		success: function(data) {
@@ -37,7 +38,7 @@ function makeLetterDivs(mystery_word){
 			div.style.background = "lightgray";
 			div.style.padding = "10px";
 			div.style.margin = "10px";
-			div.innerHTML = mystery_word[i];
+			// div.innerHTML = mystery_word[i];
 			$('#mystery-word').append(div);
 			};
 };

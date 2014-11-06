@@ -11,9 +11,16 @@ body {
 	height:300px;
 }
 
+/*guesses*/
+
+.guess-letter input {
+	padding: 30px;
+}
+
 /*random word*/
 
 #mystery-word div {
 	display: inline-block;
 	text-align: center;
 }
+

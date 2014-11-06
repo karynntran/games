@@ -1,6 +1,8 @@
 class HangmanGame < ActiveRecord::Base
 
+
   def guess_word(word)
+
     #word
     #game_state
     #bad_guessess

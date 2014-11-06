@@ -1,6 +1,7 @@
 class ApplicationController < Sinatra::Base
 
   ##helpers##
+  helpers Sinatra::AuthenticationHelper
 
   ##to enable##
   enable :sessions
