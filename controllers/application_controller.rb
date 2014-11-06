@@ -16,6 +16,13 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
+    @current_user
     erb :index
   end
+
+  get '/games' do
+    @current_user
+    erb :games_index
+  end
+
 end

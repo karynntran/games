@@ -4,19 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Games, Games, Games</title>
 	<link rel="stylesheet" href="/css/normalize.css" media="screen" title="no title" charset="utf-8">
-  	<link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
-  	<script src="scripts/jquery.min.js" type="text/javascript"></script>
-  	<script src="scripts/jquery.timeago.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <script src="scripts/jquery.min.js" type="text/javascript"></script>
+  <script src="scripts/jquery.timeago.js" type="text/javascript"></script>
   <script src="scripts/ready.js" type="text/javascript"></script>
 </head>
-
-	<header class = "navigation">
-		<% if @current_user %>
-    		<%= erb :'_homepage_nav_for_users'%>
-  		<% else %>
-    		<%= erb :'_homepage_nav_for_nonusers'%>
-  		<% end %>
-	</header>
 
 <body>
 	<%= yield %>
