@@ -47,8 +47,14 @@ body {
 	margin: 10px;
 }
 
-.guess-letter input {
-	padding: 30px;
+button {
+	padding: 2px;
+	width: 30px;
+	height: 30px;
+	margin: 1px;
+	text-align: center;
+	background-color: lightblue;
+	border-radius: 15px;
 }
 
 /*random word*/
@@ -57,9 +63,6 @@ body {
 	display: inline-block;
 	text-align: center;
 }
-
-
-
 
 
 /*clear fix*/

@@ -18,12 +18,12 @@ class HangmanController < ApplicationController
     word = Word.all.sample[:body]
     game_state = word
 
-    hangman_properties = {
+    hangman_data = {
       user_id: user_id,
       word: word,
     }
 
-    game = HangmanGame.create(hangman_properties)
+    game = HangmanGame.create(hangman_data)
     game.to_json
   end
 
@@ -46,11 +46,16 @@ class HangmanController < ApplicationController
   end
 
 
-### snowman ###
+### snowman image ###
   get '/snowman' do
     game = HangmanGame.find(params :id)
     game.snowman
     game.to_html
   end
+
+### user output ###
+
+#want a div that outputs number of tries
+#want a div that shows win or loss!
 
 end

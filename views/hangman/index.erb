@@ -18,6 +18,10 @@
 		</div>
 	</div>
 
+  <div class="user-score">
+    <h3>Tries Left</h3>
+  </div>
+
 </div>
 
 
@@ -46,49 +50,3 @@
 
 </div>
 
-<!-- javascript -->
-
-
-<script>
-//  ** Onload Function ** //
-$(function(){
-	gameId = undefined; // startGame defines this
-	$('.start-game').on("click", function(e){
-    e.preventDefault(); // return false;    
-    startGame();
-  });
-
-  $('.guess-letter').on('click', function(e) {
-  	e.preventDefault();
-  	var letter = $(this).data('letter');  
-  	$.ajax({
-  		url: '/hangman/letter-guess',
-  		method: 'PATCH',
-  		dataType: 'json',
-  		data: {
-  			guess: letter,
-  			gameId: gameId
-  		},
-  		success: updateGameState
-  			// console.log("happy")
-  	});
-  });
-
-  $('.guess-word').on('click',function(e)
-  	{
-  	e.preventDefault();
-  	var word = $(this).data('word');
-  	$.ajax({
-  		url: '/hangman/word-guess',
-  		method: 'PATCH',
-  		dataType: 'json',
-  		data: {
-  			guess: word,
-  			gameId: gameId	
-  		},
-  		success: updateGameState
-
- 	 });
-  });
-});
-</script>
