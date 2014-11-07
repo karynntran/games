@@ -21,11 +21,8 @@ class HangmanGame < ActiveRecord::Base
   #guessed word must match mystery word
 
   def guess_word(word)
-    if self.word == word
-      "YOU WIN!"
-    else
-      self.bad_guesses += 1
-    end
+    word == self.word ? self.game_state = word
+                      : self.bad_guesses += 1
     self.save
   end
 
@@ -33,18 +30,18 @@ class HangmanGame < ActiveRecord::Base
     "/images/snowman"+"#{self.bad_guesses}"+".jpg"
   end
 
-
   #game status - tries - win or lose
 
   def win_or_lose
     tries_left = (4 - self.bad_guesses)
 
-    if tries_left > 0 && tries_left < 4
-      "Tries Left: #{tries_left}"
-    elsif tries_left == 0
-      "Oh no, the snowman melted!"
-    else
-    end
+      if self.game_state == self.word
+        "YOU WIN"
+      elsif tries_left > 0 && tries_left < 4
+        "Tries Left: #{tries_left}"
+      else tries_left == 0
+        "Oh no, the snowman melted!"
+      end
 
   end
 

@@ -27,6 +27,12 @@ function startGame(){
 	})
 }
 
+// function clearGame(){
+// 	displayResults.empty();
+// 	displaySnowman.empty();
+// }
+
+
 // ** generate mystery word ** //
 
 function displayGameState(game){
@@ -82,6 +88,7 @@ function displayResults(game) {
 		dataType: "json",
 		success: function(data) {
 			$('#game-status').text(data.result);
+			clearGame();
 		}
 	});
 }
@@ -115,10 +122,11 @@ $(function(){
   	});
   });
 
-  $('.guess-word').on('click',function(e)
+  $('.guess-word').on('click', function(e)
   	{
   	e.preventDefault();
-  	var word = $(this).data('word');
+  	var word = $("#guessInput").val();
+  	debugger;
   	$.ajax({
   		url: '/hangman/word-guess',
   		method: 'PATCH',
