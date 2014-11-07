@@ -54,7 +54,12 @@ class HangmanController < ApplicationController
 
 ### user output ###
 
-#want a div that outputs number of tries
-#want a div that shows win or loss!
+#outputs number of tries
+
+#shows win or loss!
+  get '/win-or-lose' do
+    game = current_user.hangman_games.last
+    {result: game.win_or_lose}.to_json
+  end
 
 end

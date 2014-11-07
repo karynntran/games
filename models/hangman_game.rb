@@ -34,9 +34,18 @@ class HangmanGame < ActiveRecord::Base
   end
 
 
-#need to add a userfacing div that shows how many tries are left
-  def tries_left
-    (4 - self.bad_guesses).to_i
+  #game status - tries - win or lose
+
+  def win_or_lose
+    tries_left = (4 - self.bad_guesses)
+
+    if tries_left > 0 && tries_left < 4
+      "Tries Left: #{tries_left}"
+    elsif tries_left == 0
+      "Oh no, the snowman melted!"
+    else
+    end
+
   end
 
 

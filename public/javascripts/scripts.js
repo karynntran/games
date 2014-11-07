@@ -21,6 +21,8 @@ function startGame(){
 			var new_game = data;
 			displayGameState(new_game);
 			gameId = data.id;
+			displaySnowman;
+			displayResults;
 		}
 	})
 }
@@ -55,6 +57,7 @@ function makeLetterDivs(mystery_word){
 function updateGameState(game) {	
 	displayGameState(game);
 	displaySnowman();
+	displayResults();
 	console.log("update game state");
 };
 
@@ -72,6 +75,16 @@ function displaySnowman(game) {
 	});
 }
 
+function displayResults(game) {
+	$.ajax({
+		url: "/hangman/win-or-lose",
+		method: "GET",
+		dataType: "json",
+		success: function(data) {
+			$('#game-status').text(data.result);
+		}
+	});
+}
 
 
 
