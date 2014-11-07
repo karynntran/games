@@ -23,7 +23,6 @@ function startGame(){
 			gameId = data.id;
 		}
 	})
-	//want to start a new game of hangman (maybe add values to database to set game state?)
 }
 
 // ** generate mystery word ** //
@@ -40,7 +39,7 @@ function makeLetterDivs(mystery_word){
 			div.style.width = "50px";
 			div.style.height = "50px";
 			div.style.border = "solid 1px black";
-			div.style.background = "lightgray";
+			div.style.background = "white";
 			div.style.padding = "10px";
 			div.style.margin = "10px";
 			div.innerHTML = mystery_word[i];
@@ -51,18 +50,20 @@ function makeLetterDivs(mystery_word){
 // ** guesses ** //
 function updateGameState(game) {	
 	displayGameState(game);
+	displaySnowman();
 };
 
 //** snowman ** //
 
 function displaySnowman() {
+	debugger;
 	$.ajax({
 		url: "/hangman/snowman",
 		method: "GET",
 		dataTYPE: "html",
 		success: function(data) {
-			gameId = data.id;
-			$canvas.prepend(data);
+			var $snowman = $('#snowman');
+			$snowman.attr("src","data");
 		}
 	})
 }

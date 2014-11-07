@@ -1,48 +1,52 @@
-<!-- #divs for the hangman image
-
-#div for incorrect guesses
-
-#input for letter query
-
-#input for whole word query
-
-#show "You Win!" or "You Lose!" -->
-
-<!-- snowman -->
-<canvas class="melting-snowman" width="1500" height="1000">
-	
-</canvas>
-
+<h1>Melted Snowman</h1>
 
 <!-- start game -->
 
 <input class="start-game" type="submit" value="Start a Game">
 
+<div class="clearfix game-board">
+<!-- snowman -->
+
+	<div class="melting-snowman">
+		<img id="snowman" width="250px" height="auto" src="/images/snowman0.jpg"/>
+	</div>
+
+	<!-- random word is generated -->
+	<div class="random-word">
+		<h3>Your Mystery Word Is...</h3>
+		<div id="mystery-word">
+		</div>
+	</div>
+
+</div>
+
+
+<div id="user-input">
 <!-- guess a letter -->
 
-<h3>Guess a letter?</h3>
-<div id="guess-letter">
-	<% @letters.each do |letter| %>
-		<button class="guess-letter" data-letter="<%=letter%>">
-			<%= letter %>
-		</button>
-	<% end %>
+	<div id="guessbox">
+		<h3>Guess a letter?</h3>	
+			<% @letters.each do |letter| %>
+				<button class="guess-letter" data-letter="<%=letter%>">
+					<%= letter %>
+				</button>
+			<% end %>
+	</div>
+	<br>
+
+	<!-- guess the whole word -->
+
+	<div id="guessbox">
+		<h3>Guess the whole word?</h3>
+		<form action="/hangman" method="post">
+			<input type="text" name="word_guess" placeholder="Guess a letter" data-letter="word">
+			<input class="guess-word" type="submit" value="Guess">
+		</form>
+	</div>
+
 </div>
-<br>
 
-<!-- guess the whole word -->
-
-<h3>Guess the whole word?</h3>
-<form action="/hangman" method="post">
-	<input type="text" name="word_guess" placeholder="Guess a letter" data-letter="word">
-	<input class="guess-word" type="submit" value="Guess">
-</form>
-
-<!-- random word is generated -->
-
-<h3>This is your mystery word</h3>
-<div id="mystery-word">
-</div>
+<!-- javascript -->
 
 
 <script>
@@ -66,6 +70,7 @@ $(function(){
   			gameId: gameId
   		},
   		success: updateGameState
+  			// console.log("happy")
   	});
   });
 
@@ -81,10 +86,8 @@ $(function(){
   			guess: word,
   			gameId: gameId	
   		},
-  		success: function(){
-  			updateGameState;
-				console.log("yay")
-			}	
+  		success: updateGameState
+
  	 });
   });
 });

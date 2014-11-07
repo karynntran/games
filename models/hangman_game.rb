@@ -24,20 +24,7 @@ class HangmanGame < ActiveRecord::Base
   end
 
   def snowman
-    case self.bad_guesses
-      when 0
-        "<img id='snowman-1' src='/public/images/snowman1.jpg' />"
-      when 1
-        "<img id='snowman-2' src='/public/images/snowman2.jpg' />"
-      when 2
-        "<img id='snowman-3' src='/public/images/snowman3.jpg' />"
-      when 3
-        "<img id='snowman-4' src='/public/images/snowman4.jpg' />"
-      when 4
-        "<img id='snowman-5' src='/public/images/snowman5.jpg' />"
-      else
-        "You lost!"
-    end
+    "/images/snowman"+"#{self.bad_guesses}"+".jpg"
   end
 
 

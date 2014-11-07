@@ -48,7 +48,7 @@ class HangmanController < ApplicationController
 
 ### snowman ###
   get '/snowman' do
-    game = HangmanGame.find(game_id)
+    game = HangmanGame.find(params :id)
     game.snowman
     game.to_html
   end

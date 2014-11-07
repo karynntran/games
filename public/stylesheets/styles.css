@@ -3,15 +3,49 @@ body {
 	font-family: arial;
 }
 
-/*hangman*/
+/*structure*/
+
+.game-board {
+	width: 1000px;
+	height: auto;
+	display: inline-block;
+	border: 1px solid lightgray;
+	margin: 10px auto;
+	background-color: lightblue;
+}
 
 .melting-snowman {
-	border: 2px solid lightgray;
-	width: 300px;
-	height:300px;
+	border: 1px solid lightgray;
+	width: 250px;
+	height: auto;
+	margin: 10px;
+	float: left;
+}
+
+#snowman {
+	border-radius: 15px;
+}
+
+.random-word {
+	width: 650px;
+	height: auto;
+	margin: 10px;
+	float: left;
 }
 
 /*guesses*/
+
+#user-input {
+	width: 1000px;
+	height: 200px;
+	display: block;
+	border: 1px solid lightgray;
+	margin: 0 auto;
+}
+
+#guessbox {
+	margin: 10px;
+}
 
 .guess-letter input {
 	padding: 30px;
@@ -24,3 +58,22 @@ body {
 	text-align: center;
 }
 
+
+
+
+
+/*clear fix*/
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
