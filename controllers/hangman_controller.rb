@@ -8,6 +8,8 @@ class HangmanController < ApplicationController
     erb :'hangman/index'
   end
 
+  ### start game ###
+
   get '/start_game' do
     content_type :json
     current_user
@@ -41,6 +43,14 @@ class HangmanController < ApplicationController
     game = HangmanGame.find(game_id)
     game.guess_letter(guessed_letter)
     game.to_json
+  end
+
+
+### snowman ###
+  get '/snowman' do
+    game = HangmanGame.find(game_id)
+    game.snowman
+    game.to_html
   end
 
 end

@@ -2,14 +2,17 @@ console.log(":)");
 
 //  ** Global ** //
 
-var mystery_word; 
+var $canvas = $('.melting-snowman');
 var context;
+var mystery_word; 
+
 
 
 //  ** Hangman ** //
 
 
 function startGame(){
+
 	$.ajax({
 		url: "/hangman/start_game",
 		method: "GET",
@@ -48,8 +51,18 @@ function makeLetterDivs(mystery_word){
 // ** guesses ** //
 function updateGameState(game) {	
 	displayGameState(game);
+};
+
+//** snowman ** //
+
+function displaySnowman() {
+	$.ajax({
+		url: "/hangman/snowman",
+		method: "GET",
+		dataTYPE: "html",
+		success: function(data) {
+			gameId = data.id;
+			$canvas.prepend(data);
+		}
+	})
 }
-
-// ** word guess ** //
-
-
