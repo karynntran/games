@@ -16,7 +16,7 @@ function startGame(){
 	$.ajax({
 		url: "/hangman/start_game",
 		method: "GET",
-		dataTYPE: "json",
+		dataType: "json",
 		success: function(data) {
 			var new_game = data;
 			displayGameState(new_game);
@@ -44,6 +44,7 @@ function makeLetterDivs(mystery_word){
 			div.style.padding = "10px";
 			div.style.margin = "10px";
 			div.style.color = "darkblue";
+			div.style.size = "20px";
 			div.innerHTML = mystery_word[i];
 			$('#mystery-word').append(div);
 			};
@@ -53,21 +54,22 @@ function makeLetterDivs(mystery_word){
 // ** guesses ** //
 function updateGameState(game) {	
 	displayGameState(game);
+	displaySnowman();
 	console.log("update game state");
 };
 
 //** snowman ** //
 
-function displaySnowman() {
+function displaySnowman(game) {
 	$.ajax({
 		url: "/hangman/snowman",
 		method: "GET",
-		dataTYPE: "html",
+		dataType: "json",
 		success: function(data) {
 			var $snowman = $('#snowman');
-			$snowman.attr("src", " data ");
+			$snowman.attr("src", data.image);
 		}
-	})
+	});
 }
 
 

@@ -48,9 +48,8 @@ class HangmanController < ApplicationController
 
 ### snowman image ###
   get '/snowman' do
-    game = HangmanGame.find(params :id)
-    game.snowman
-    game.to_html
+    game = current_user.hangman_games.last
+    {image: game.snowman}.to_json
   end
 
 ### user output ###
