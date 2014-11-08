@@ -126,7 +126,6 @@ $(function(){
   	{
   	e.preventDefault();
   	var word = $("#guessInput").val();
-  	debugger;
   	$.ajax({
   		url: '/hangman/word-guess',
   		method: 'PATCH',

@@ -54,8 +54,6 @@ class HangmanController < ApplicationController
 
 ### user output ###
 
-#outputs number of tries
-
 #shows win or loss!
   get '/win-or-lose' do
     game = current_user.hangman_games.last

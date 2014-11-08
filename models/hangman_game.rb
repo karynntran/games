@@ -36,12 +36,16 @@ class HangmanGame < ActiveRecord::Base
     tries_left = (4 - self.bad_guesses)
 
       if self.game_state == self.word
-        "YOU WIN"
+        self.end_game = true
+        outcome = "YOU WIN"
       elsif tries_left > 0 && tries_left < 4
-        "Tries Left: #{tries_left}"
+        outcome = "Tries Left: #{tries_left}"
       else tries_left == 0
-        "Oh no, the snowman melted!"
+        self.end_game = false
+        outcome =  "Oh no, the snowman melted!"
       end
+      self.save
+      "#{outcome}"
 
   end
 
