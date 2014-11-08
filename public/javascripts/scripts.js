@@ -90,9 +90,36 @@ function displayResults(game) {
 		dataType: "json",
 		success: function(data) {
 			$('#game-status').text(data.result);
-		}
+			if (data.end_game === true){
+				setInterval(function(){
+					victorySnowflakes(10);
+				}, 100);
+			}
+  	}
 	});
 }
+
+
+
+//win!//
+
+function victorySnowflakes(numSnowflakes) {
+  for (var i = 0; i < numSnowflakes; i++) {
+    var snowFlake = $('<h1 class="snowflake">&hearts;</h1>');
+    $('.melting-snowman').append(snowFlake);
+
+    var blue = Math.floor(Math.random() * 255);
+    var newColor = blue;
+    snowFlake.css({color: newColor})
+
+    snowFlake.animate({
+      top: Math.floor(Math.random() * 200) - 50 + '%',
+      left: Math.floor(Math.random() * 200) - 50 + '%',
+      opacity: 0
+    }, 2000, 'linear');
+  }
+}
+
 
 
 

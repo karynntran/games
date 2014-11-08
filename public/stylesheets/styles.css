@@ -81,3 +81,15 @@ button {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+
+
+
+
+.snowflake{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: blue;
+  font-size: 5em;  
+}

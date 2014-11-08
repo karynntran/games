@@ -57,7 +57,10 @@ class HangmanController < ApplicationController
 #shows win or loss!
   get '/win-or-lose' do
     game = current_user.hangman_games.last
-    {result: game.win_or_lose}.to_json
+    {
+      result: game.win_or_lose,
+      end_game: game.end_game
+      }.to_json
   end
 
 end
