@@ -1,4 +1,18 @@
-<h1>Melted Snowman</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Games, Games, Games -- Save the Snowman!</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/hangman_styles.css">
+    <script src='/javascripts/jquery.js'></script>
+    <script src='/javascripts/hangman_scripts.js'></script>
+</head>
+
+<body>
+
+
+<h1>Save the Snowman</h1>
 
 <!-- start game -->
 
@@ -9,18 +23,22 @@
 <div class="scoreboard">
   <table>
     <tr colspan="2">
-      <%=current_user.username%>
+      <p><strong>Current User: <%=current_user.username%></strong></p>
+    </tr>
     <tr>
+      <td>Wins</td>
+      <td>Losses</td>
+    </tr>
     <tr>
       <td>
-        <%wins = @games.map { |game| game.end_game = true } %>
+        <%wins = @games.select { |game| game.end_game == true } %>
         <%=wins.length%>
       </td>
       <td>
-        <%losses = @games.map { |game| game.end_game = false } %>
+        <%losses = @games.select { |game| game.end_game == false } %>
         <%=losses.length%>
       </td>
-    <tr>
+    </tr>
   </table>
 </div>
 
@@ -33,9 +51,9 @@
 	</div>
 
   <!-- game status -->
-    <h3>Game Status...</h3>
-    <div id="game-status">
-    </div>
+  <h3>Game Status...</h3>
+  <div id="game-status">
+  </div>
 
 	<!-- random word is generated -->
 	<div class="random-word">
@@ -58,7 +76,6 @@
 				</button>
 			<% end %>
 	</div>
-	<br>
 
 	<!-- guess the whole word -->
 
@@ -72,3 +89,5 @@
 
 </div>
 
+</body>
+</html>

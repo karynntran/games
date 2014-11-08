@@ -16,6 +16,13 @@ class UsersController < ApplicationController
       erb :'users/new'
     end
 
+  get '/profile' do
+    current_user
+
+    @games = current_user.hangman_games
+
+  end
+
   end
 
 end

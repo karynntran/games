@@ -1,111 +1,36 @@
 body {
-	background-color: white;
+	background-color: #3366FF;
+	margin-top: 35px;
+	margin-bottom: 20px;
 	font-family: arial;
+	padding: 5px;
+	color: white;
 }
 
-/*structure*/
-
-.game-board {
-	width: 1000px;
-	height: auto;
-	display: inline-block;
-	border: 1px solid lightgray;
-	margin: 10px auto;
-	background-color: lightblue;
+header {
+	background-color: white;
+	position: fixed;
+	margin-top: 0px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 35px;
+	padding: 5px;
+	text-align: right;
 }
 
-.melting-snowman {
-	border: 1px solid lightgray;
-	width: 250px;
-	height: auto;
-	margin: 10px;
-	float: left;
+footer {
+    position:fixed;
+    height:20px;
+    background-color:white;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    padding: 5px;
+    text-align: right;
 }
 
-#snowman {
-	border-radius: 15px;
-}
-
-.random-word {
-	width: 650px;
-	height: auto;
-	margin: 10px;
-	float: left;
-}
-
-.scoreboard {
-	width: 1000px;
-	height: 100px;
-	border: 1px solid lightgray;
-	margin: 10px auto;
-	text-align: center;
-}
-
-
-/*guesses*/
-
-#user-input {
-	width: 1000px;
-	height: 200px;
-	display: block;
-	border: 1px solid lightgray;
-	margin: 0 auto;
-}
-
-#guessbox {
-	margin: 10px;
-}
-
-button {
-	padding: 2px;
-	width: 30px;
-	height: 30px;
-	margin: 1px;
-	text-align: center;
-	background-color: lightblue;
-	border-radius: 15px;
-}
-
-/*random word*/
-
-#mystery-word div {
-	display: inline-block;
-	text-align: center;
-}
-
-
-/*clear fix*/
-
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
-
-
-
-
-
-.snowflake{
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  color: blue;
-  font-size: 5em;  
-}
-
-
-
-/*user css*/
-
-.errors {
-	color: red;
+a {
+	color: orange;
 }

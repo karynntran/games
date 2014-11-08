@@ -6,7 +6,7 @@ class HangmanController < ApplicationController
     @letters = ('a'..'z').to_a
     @games = current_user.hangman_games
 
-    erb :'hangman/index'
+    erb :'hangman/index', :layout => false
   end
 
   ### start game ###
