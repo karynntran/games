@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :hangman_games
 
+  validates :username, :password_hash, presence: true
+  validates_uniqueness_of :username
+
   def password
     @password ||= Password.new(self.password_hash)
   end

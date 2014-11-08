@@ -93,3 +93,12 @@ button {
   color: blue;
   font-size: 5em;  
 }
+
+
+
+
+/*user css*/
+
+.errors {
+	color: red;
+}

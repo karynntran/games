@@ -94,6 +94,7 @@ function displayResults(game) {
 				setInterval(function(){
 					victorySnowflakes(10);
 				}, 100);
+				buildSnowman;
 			}
   	}
 	});
@@ -105,7 +106,7 @@ function displayResults(game) {
 
 function victorySnowflakes(numSnowflakes) {
   for (var i = 0; i < numSnowflakes; i++) {
-    var snowFlake = $('<h1 class="snowflake">&hearts;</h1>');
+    var snowFlake = $('<h1 class="snowflake">&#9784;</h1>');
     $('.melting-snowman').append(snowFlake);
 
     var blue = Math.floor(Math.random() * 255);
@@ -120,6 +121,14 @@ function victorySnowflakes(numSnowflakes) {
   }
 }
 
+function buildSnowman(){
+	var $snowman = $('#snowman');
+	$snowman.attr("src", "/images/snowman4.jpg");
+	$snowman.attr("src", "/images/snowman3.jpg");
+	$snowman.attr("src", "/images/snowman2.jpg");
+	$snowman.attr("src", "/images/snowman1.jpg");
+	$snowman.attr("src", "/images/snowman4.jpg");
+}
 
 
 
