@@ -5,6 +5,7 @@ class CreateHangmanGames < ActiveRecord::Migration
       t.string :word
       t.string :game_state
       t.integer :bad_guesses
+      t.boolean :end_game
       t.timestamps
     end
   end

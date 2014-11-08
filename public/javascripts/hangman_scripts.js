@@ -32,6 +32,7 @@ function clearGame(){
 	$('#game-status').empty();
 	$("#guessInput").empty();
 	$('#snowman').attr("src", "/images/snowman0.jpg");
+	$('.melting-snowman').stop();
 }
 
 
@@ -89,14 +90,39 @@ function displayResults(game) {
 		method: "GET",
 		dataType: "json",
 		success: function(data) {
+			$data = data
 			$('#game-status').text(data.result);
-			if (data.end_game === true){
-				setInterval(function(){
-					victorySnowflakes(10);
-				}, 100);
-			}
+			checkWinorLose();
+			// if (data.end_game === true){
+			// 	setInterval(function(){
+			// 		victorySnowflakes(10);
+			// 	}, 1);
+			// 	alert("Play again?");
+			// }
   	}
 	});
+}
+
+function checkWinorLose(game){
+
+	if ($data.end_game === true){
+		setInterval(function(){
+			victorySnowflakes(10);
+		}, 1);
+    if (confirm("You saved the snowman! Play again?") == true) {
+      clearGame();
+      // window.location.href = "/hangman";
+    } else {
+      window.location.href = "/";
+		};
+	};
+	if ($data.end_game === false){
+		if (confirm("Oh, no - the snowman melted! Play again?") == true) {
+			window.location.href = "/hangman";
+		} else {
+			window.location.href = "/";
+		};
+	};
 }
 
 
