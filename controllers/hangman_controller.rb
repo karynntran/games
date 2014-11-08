@@ -4,6 +4,7 @@ class HangmanController < ApplicationController
     authenticate!
     current_user
     @letters = ('a'..'z').to_a
+    @games = current_user.hangman_games
 
     erb :'hangman/index'
   end

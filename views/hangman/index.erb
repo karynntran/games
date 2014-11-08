@@ -4,6 +4,27 @@
 
 <input class="start-game" type="submit" value="Start a Game">
 
+<!-- start game -->
+
+<div class="scoreboard">
+  <table>
+    <tr colspan="2">
+      <%=current_user.username%>
+    <tr>
+    <tr>
+      <td>
+        <%wins = @games.map { |game| game.end_game = true } %>
+        <%=wins.length%>
+      </td>
+      <td>
+        <%losses = @games.map { |game| game.end_game = false } %>
+        <%=losses.length%>
+      </td>
+    <tr>
+  </table>
+</div>
+
+
 <div class="clearfix game-board">
   <!-- snowman -->
 

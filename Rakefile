@@ -20,15 +20,15 @@ namespace :db do
 
     require './models/word'
 
-    Word.create({body: "monkey"})
-    Word.create({body: "banana"})
-    Word.create({body: "jungle"})
-    Word.create({body: "fruit"})
-    Word.create({body: "elephant"})
-    Word.create({body: "trees"})
-    Word.create({body: "swing"})
-    Word.create({body: "vine"})
-    Word.create({body: "lemur"})
+    Word.create({body: "snow"})
+    Word.create({body: "frost"})
+    Word.create({body: "jingle"})
+    Word.create({body: "snowman"})
+    Word.create({body: "holiday"})
+    Word.create({body: "sleigh"})
+    Word.create({body: "bells"})
+    Word.create({body: "cold"})
+    Word.create({body: "flake"})
 
   end
 

@@ -33,6 +33,14 @@ body {
 	float: left;
 }
 
+.scoreboard {
+	width: 1000px;
+	height: 100px;
+	border: 1px solid lightgray;
+	margin: 10px auto;
+	text-align: center;
+}
+
 
 /*guesses*/
 
@@ -93,7 +101,6 @@ button {
   color: blue;
   font-size: 5em;  
 }
-
 
 
 
