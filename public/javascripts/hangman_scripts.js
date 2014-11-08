@@ -108,13 +108,18 @@ function checkWinorLose(game){
 	if ($data.end_game === true){
 		setInterval(function(){
 			victorySnowflakes(10);
-		}, 1);
-    if (confirm("You saved the snowman! Play again?") == true) {
-      clearGame();
-      // window.location.href = "/hangman";
-    } else {
-      window.location.href = "/";
-		};
+		}, 10);
+
+		setTimeout(function(){
+			if (confirm("You saved the snowman! Play again?") == true) {
+	      clearGame();
+	      // window.location.href = "/hangman";
+	    } else {
+	      window.location.href = "/";
+			};
+		}, 5000)
+
+
 	};
 	if ($data.end_game === false){
 		if (confirm("Oh, no - the snowman melted! Play again?") == true) {
