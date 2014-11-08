@@ -27,10 +27,12 @@ function startGame(){
 	})
 }
 
-// function clearGame(){
-// 	displayResults.empty();
-// 	displaySnowman.empty();
-// }
+function clearGame(){
+	$('#mystery-word').empty();
+	$('#game-status').empty();
+	$("#guessInput").empty();
+	$('#snowman').attr("src", "/images/snowman0.jpg");
+}
 
 
 // ** generate mystery word ** //
@@ -88,7 +90,6 @@ function displayResults(game) {
 		dataType: "json",
 		success: function(data) {
 			$('#game-status').text(data.result);
-			clearGame();
 		}
 	});
 }
@@ -103,6 +104,7 @@ $(function(){
 	gameId = undefined; // startGame defines this
 	$('.start-game').on("click", function(e){
     e.preventDefault(); // return false;    
+    clearGame();
     startGame();
   });
 
