@@ -104,7 +104,8 @@ function displayResults(game) {
 }
 
 function checkWinorLose(end_game){
-	if (end_game === true){
+	console.log(end_game);
+	if (end_game == true){
 		setInterval(function(){
 			victorySnowflakes(10);
 		}, 10);
@@ -118,7 +119,7 @@ function checkWinorLose(end_game){
 			};
 		}, 5000);
 	}
-	else if (end_game === false){
+	else if (end_game == false){
 		if (confirm("Oh, no - the snowman melted! Play again?") == true) {
 			window.location.href = "/hangman";
 		} else {
@@ -126,6 +127,7 @@ function checkWinorLose(end_game){
 		};
 	}
 	else {
+		clearGame();
 		displayResults();
 	};
 }
