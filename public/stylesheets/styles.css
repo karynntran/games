@@ -38,11 +38,18 @@ a {
 }
 
 .nav {
-	text-align: right;
+	display: inline;
 }
 
 .nav li {
 	display: inline-block;
+}
+
+.title {
+	float: left;
+	color: darkblue;
+	font-size: 30px;
+	text-decoration: bold;
 }
 
 .current_user {
@@ -60,28 +67,50 @@ a {
 	padding: none;
 }
 
-.mainpage {
-	width: 800px;
+/*main div*/
+.main-page {
+	width: 700px;
 	height: 150px;
-	display: inline-block;
-	border: 1px solid lightgray;
+	display: inline;
 	margin: 0 auto;
+	font-size: 30px;
+	padding: 150px;
 }
 
-.main-hangman {
-	width: 400px;
-	height: 200px;
-	float: left;
-	background-color: orange;
+/*index elements*/
+.index {
+	border: 2px dotted white;
+	padding: 10px;
+	margin: 20px;
+}
+
+/*header of index table*/
+.homepage {
+	text-decoration: none;
+}
+
+
+.header {
 	color: white;
 }
 
-.main-ttt {
-	width: 400px;
-	height: 200px;
-	float: right;
+/*describes game content*/
+.content {
+	height: 100px;
 	background-color: darkblue;
-	color: orange;
+	font-size: 20px;
+	border: 2px dotted white;
+}
+
+.link-text {
+	text-decoration: none;
+	padding: 20px;
+} 
+
+/*teaser image for game*/
+.image {
+	background-color: white;
+	border: 2px dotted orange;
 }
 
 
