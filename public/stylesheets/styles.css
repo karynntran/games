@@ -83,7 +83,11 @@ a {
 	margin: 0 auto;
 	text-align: center;
 	padding: 200px;
+}
 
+.welcome-msg-link {
+	background-color: white;
+	text-decoration: none;
 }
 
 /*index elements*/

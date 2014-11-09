@@ -21,9 +21,6 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  get '/games' do
-    @current_user
-    erb :games_index
-  end
+
 
 end

@@ -21,7 +21,7 @@
 			<% if current_user %>
 				<%= erb :'_homepage_nav_for_users' %>
 			<% else%>
-				<%=false%>
+				<%= erb :'_homepage_nav_for_nonusers' %>
 			<% end %>
 		</div>
 	</div>	
