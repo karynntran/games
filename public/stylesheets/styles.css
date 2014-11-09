@@ -129,3 +129,16 @@ a {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+
+/*/*//*/*//*/*USERS/*//*/*//*/*//*/*/
+
+.avatar-big {
+	border-radius: 50%;
+	height: 250px;
+	width: auto;
+}
+
+.profile-tags {
+	color: orange;
+}

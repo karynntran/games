@@ -1,0 +1,21 @@
+<h1>
+Hi, I am <%=current_user.username%>
+</h1>
+
+<img class="avatar-big" src="<%=current_user.avatar%>">
+
+<p class="profile-tags">About Me:</p>
+<%=current_user.aboutme%>
+
+<p class="profile-tags">Games I've Played:</p>
+<%=current_user.hangman_games.count%>
+
+<p class="profile-tags">Hangman Games:</p>
+<p>Wins:</p>
+<%wins = @games.select { |game| game.end_game == true } %>
+        <%=wins.length%>
+
+
+<p>Losses:</p>
+<%losses = @games.select { |game| game.end_game == false } %>
+        <%=losses.length%>

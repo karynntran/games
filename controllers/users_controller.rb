@@ -15,14 +15,13 @@ class UsersController < ApplicationController
       @errors = @user.errors.full_messages
       erb :'users/new'
     end
+  end
 
   get '/profile' do
     current_user
     @games = current_user.hangman_games
     erb :'users/profile'
-
   end
 
-  end
 
 end
