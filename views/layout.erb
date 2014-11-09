@@ -16,13 +16,14 @@
 		<div class="title">
 			Games, Games, Games
 		</div>
-		
-		<% if current_user %>
-			<%= erb :'_homepage_nav_for_users' %>
-		<% else%>
-			<%= erb :'_homepage_nav_for_nonusers' %>
-		<% end %>
 
+		<div>
+			<% if current_user %>
+				<%= erb :'_homepage_nav_for_users' %>
+			<% else%>
+				<%=false%>
+			<% end %>
+		</div>
 	</div>	
 </header>
 

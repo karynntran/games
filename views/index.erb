@@ -1,29 +1,7 @@
-
-
-<table class="clearfix main-page">
-
-	<tr>
-		<td class="index"><a class="header homepage" href = "/hangman">Save the Snowman</a></td>
-		<td class="index"><a class="header homepage" href= "/tic_tac_toe">Tic Tac Toe</a></td>
-	</tr>
-
-	<tr>
-		<td class="index image">
-			<img id="snowman" width="100px" height="auto" src="/images/snowman0.jpg"/>
-		</td>
-
-		<td class="index image">
-			<img width="150px" height="auto" src="http://1.bp.blogspot.com/_wcMBl1YsNwA/TENMUvYZKwI/AAAAAAAAAbU/gN064EdHfqU/s1600/tic-tac-toe-collage.jpg"/>
-		</td>
-	</tr>
-
-	<tr>
-		<td class="content">
-			<a class="link-text" href = "/hangman">Only you can save the snowman from melting!</a>
-		</td>
-		<td class="content">
-			<a class="link-text" href= "/tic_tac_toe">Take over the board with X's and O's!</a>
-		</td>
-	</tr>
-
-</table>
+	<div>
+		<% if current_user %>
+			<%= erb :'_homepage_index_for_users' %>
+		<% else%>
+			<%= erb :'_homepage_index_for_non_users' %>
+		<% end %>
+	</div>

@@ -14,7 +14,7 @@ header {
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	height: 50px;
+	height: 35px;
 	padding: 5px;
 	text-align: right;
 }
@@ -39,10 +39,12 @@ a {
 
 .nav {
 	display: inline;
+
 }
 
 .nav li {
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .title {
@@ -75,6 +77,13 @@ a {
 	margin: 0 auto;
 	font-size: 30px;
 	padding: 150px;
+}
+
+.welcome-msg {
+	margin: 0 auto;
+	text-align: center;
+	padding: 200px;
+
 }
 
 /*index elements*/
@@ -137,6 +146,14 @@ a {
 	border-radius: 50%;
 	height: 250px;
 	width: auto;
+	border: solid 3px white;
+}
+
+.avatar-small {
+	height: 30px;
+	width: auto;
+	border-radius: 50%;
+	border: solid 2px #3366FF;
 }
 
 .profile-tags {
