@@ -2,13 +2,44 @@
 
 /*structure*/
 
+/*structure 1*/
+.hangman-header {
+	width: 1000px;
+	display: inline;
+	margin: 0 auto;
+}
+
+.title {
+	float:left;
+}
+
+
+.scoreboard {
+	width: 500px;
+	height: 100px;
+	border: 1px solid lightgray;
+	margin: 10px auto;
+	text-align: center;
+	float: right;
+}
+
+/*structure 2*/
+
+.start-game {
+	text-decoration: none;
+	background-color: white;
+	font-size: 16px;
+	color:orange;
+	margin: 5px auto;
+}
+
 .game-board {
 	width: 1000px;
 	height: auto;
 	display: inline-block;
 	border: 1px solid lightgray;
-	margin: 10px auto;
-	padding-bottom: 10px;
+	margin: 0 auto 5px auto;
+	padding-bottom: 5px;
 }
 
 .melting-snowman {
@@ -29,33 +60,35 @@
 	float: left;
 }
 
-.scoreboard {
-	width: 500px;
-	height: 100px;
-	border: 1px solid lightgray;
-	margin: 10px auto;
-	text-align: center;
-}
-
 td {
 	text-align: center;
 	width: 500px;
+	padding: 0;
 }
 
-
+/*structure 3*/
 /*guesses*/
 
-#user-input {
+.user-input {
 	width: 1000px;
-	height: 200px;
-	display: block;
+	height: 150px;
+	display: inline-block;
 	border: 1px solid lightgray;
 	margin: 0 auto;
 }
 
-#guessbox {
-	margin: 10px;
+#guess-letter {
+	margin: 0 10px;
+	width: 450px;
+	float: left;
 }
+
+#guess-word {
+	margin: 0 10px;
+	width: 450px;
+	float: right;
+}
+
 
 button {
 	padding: 2px;
@@ -93,13 +126,11 @@ button {
 
 
 
-
 .snowflake{
   position: absolute;
   color: blue;
   font-size: 5em;  
 }
-
 
 
 /*user css*/

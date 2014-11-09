@@ -1,2 +1,15 @@
-<a href = "/hangman">Hangman</a>
-<a href = "/tic_tac_toe">Tic Tac Toe</a>
+<div>
+
+  <ul class="nav">
+    <li class="current_user">Logged in as <%=current_user.username%></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/users/profile">Profile</a></li>
+    <li>
+      <form action="/sessions" method="post">
+	  	  <input type="hidden" name="_method" value="delete">
+	  	  <input class="logout" type="submit" value="LogOut">	
+  	  </form>
+    </li>
+  </ul>
+
+</div>

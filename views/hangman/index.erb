@@ -1,24 +1,7 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Games, Games, Games -- Save the Snowman!</title>
+<div class="clearfix hangman-header">
+<h1 class="title">Save the Snowman</h1>
 
-    <link rel="stylesheet" type="text/css" href="/stylesheets/hangman_styles.css">
-    <script src='/javascripts/jquery.js'></script>
-    <script src='/javascripts/hangman_scripts.js'></script>
-</head>
-
-<body> -->
-
-
-<h1>Save the Snowman</h1>
-
-<!-- start game -->
-
-<input class="start-game" type="submit" value="Start a Game">
-
-<!-- start game -->
+<!-- scoreboard -->
 
 <div class="scoreboard">
   <table>
@@ -41,9 +24,19 @@
     </tr>
   </table>
 </div>
+</div>
+
+
+
+<!-- gameboard -->
 
 
 <div class="clearfix game-board">
+  
+  <!-- start game -->
+
+  <input class="start-game" type="submit" value="Start a Game">
+
   <!-- snowman -->
 
 	<div class="melting-snowman" width="250px" height="400">
@@ -65,10 +58,10 @@
 </div>
 
 
-<div id="user-input">
+<div class="clearfix user-input">
 <!-- guess a letter -->
 
-	<div id="guessbox">
+	<div id="guess-letter">
 		<h3>Guess a letter?</h3>	
 			<% @letters.each do |letter| %>
 				<button class="guess-letter" data-letter="<%=letter%>">
@@ -79,7 +72,7 @@
 
 	<!-- guess the whole word -->
 
-	<div id="guessbox">
+	<div id="guess-word">
 		<h3>Guess the whole word?</h3>
 		<form action="/hangman" method="post">
 			<input id="guessInput" type="text" name="word_guess" placeholder="Guess a word">

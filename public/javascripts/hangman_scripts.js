@@ -104,6 +104,7 @@ function displayResults(game) {
 }
 
 function checkWinorLose(end_game){
+	debugger;
 	console.log(end_game);
 	if (end_game == true){
 		setInterval(function(){
@@ -131,8 +132,7 @@ function checkWinorLose(end_game){
 		};
 	}
 	else {
-		end_game == null
-		displayResults();
+		return null
 	};
 }
 
