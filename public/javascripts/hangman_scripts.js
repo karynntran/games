@@ -127,7 +127,6 @@ function checkWinorLose(end_game){
 		};
 	}
 	else {
-		clearGame();
 		displayResults();
 	};
 }
