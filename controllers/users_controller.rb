@@ -18,8 +18,8 @@ class UsersController < ApplicationController
 
   get '/profile' do
     current_user
-
     @games = current_user.hangman_games
+    erb :'users/profile'
 
   end
 
