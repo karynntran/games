@@ -112,21 +112,26 @@ function checkWinorLose(end_game){
 
 		setTimeout(function(){
 			if (confirm("You saved the snowman! Play again?") == true) {
-	      // clearGame();
+	      clearGame();
 	      window.location.href = "/hangman";
 	    } else {
+	      clearGame();
 	      window.location.href = "/";
 			};
 		}, 5000);
+
 	}
 	else if (end_game == false){
 		if (confirm("Oh, no - the snowman melted! Play again?") == true) {
+			clearGame();
 			window.location.href = "/hangman";
 		} else {
+			clearGame();
 			window.location.href = "/";
 		};
 	}
 	else {
+		end_game == null
 		displayResults();
 	};
 }
