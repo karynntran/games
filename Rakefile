@@ -29,6 +29,15 @@ namespace :db do
     Word.create({body: "bells"})
     Word.create({body: "cold"})
     Word.create({body: "flake"})
+    Word.create({body: "scarf"})
+    Word.create({body: "coal"})
+    Word.create({body: "freeze"})
+    Word.create({body: "winter"})
+    Word.create({body: "wonderland"})
+    Word.create({body: "merry"})
+    Word.create({body: "merry"})
+    Word.create({body: "gloves"})
+    Word.create({body: "sledding"})
 
   end
 

@@ -92,7 +92,7 @@ function displayResults(game) {
 		success: function(data) {
 			$data = data
 			$('#game-status').text(data.result);
-			checkWinorLose();
+			checkWinorLose($data.end_game);
 			// if (data.end_game === true){
 			// 	setInterval(function(){
 			// 		victorySnowflakes(10);
@@ -103,30 +103,30 @@ function displayResults(game) {
 	});
 }
 
-function checkWinorLose(game){
-
-	if ($data.end_game === true){
+function checkWinorLose(end_game){
+	if (end_game === true){
 		setInterval(function(){
 			victorySnowflakes(10);
 		}, 10);
 
 		setTimeout(function(){
 			if (confirm("You saved the snowman! Play again?") == true) {
-	      clearGame();
-	      // window.location.href = "/hangman";
+	      // clearGame();
+	      window.location.href = "/hangman";
 	    } else {
 	      window.location.href = "/";
 			};
-		}, 5000)
-
-
-	};
-	if ($data.end_game === false){
+		}, 5000);
+	}
+	else if (end_game === false){
 		if (confirm("Oh, no - the snowman melted! Play again?") == true) {
 			window.location.href = "/hangman";
 		} else {
 			window.location.href = "/";
 		};
+	}
+	else {
+		displayResults();
 	};
 }
 
