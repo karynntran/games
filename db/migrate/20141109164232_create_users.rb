@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :wins
       t.string :losses
       t.text   :aboutme
+      t.string :avatar
 
       t.timestamps
     end
