@@ -17,11 +17,20 @@ class UsersController < ApplicationController
     end
   end
 
+
   get '/profile' do
     current_user
     @games = current_user.hangman_games
     erb :'users/profile'
   end
 
+  get '/profile/:id/edit'
+    current_user = User.find(id: current_user.id)
+
+    erb :'/users/edit'
+  end
+
+  patch '/' do
+  end
 
 end

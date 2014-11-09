@@ -1,0 +1,12 @@
+<h1>Edit Your Profile</h1>
+
+<form action = '/profile/<%=current_user.id%>' name="method" method="post">
+  <input type ="hidden" name="_method" value="patch"/>
+
+	<p>Tell Us About Yourself:</p><textarea rows="10" cols="40" name="user[aboutme]"><%=current_user.aboutme%></textarea>
+	<p>Choose an Avatar!:</p> <input type="text" name="user[avatar]" value="<%=current_user.avatar%>">
+	<input type="submit">
+</form>
+
+
+</form>
