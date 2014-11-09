@@ -1,7 +1,4 @@
-body {
-	background-color: white;
-	font-family: arial;
-}
+
 
 /*structure*/
 
@@ -11,11 +8,10 @@ body {
 	display: inline-block;
 	border: 1px solid lightgray;
 	margin: 10px auto;
-	background-color: lightblue;
+	padding-bottom: 10px;
 }
 
 .melting-snowman {
-	border: 1px solid lightgray;
 	width: 250px;
 	height: 325px;
 	margin: 10px;
@@ -67,7 +63,7 @@ button {
 	height: 30px;
 	margin: 1px;
 	text-align: center;
-	background-color: lightblue;
+	background-color: white;
 	border-radius: 15px;
 }
 
