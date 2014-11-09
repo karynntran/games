@@ -4,7 +4,7 @@
     <li><img class="avatar-small" src="<%=current_user.avatar%>"></li>
     <li class="current_user">Logged in as <%=current_user.username%></li>
     <li><a href="/">Home</a></li>
-    <li><a href="/users/profile">Profile</a></li>
+    <li><a href="/users/profile/<%=current_user.id%>">Profile</a></li>
     <li>
       <form action="/sessions" method="post">
 	  	  <input type="hidden" name="_method" value="delete">

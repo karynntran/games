@@ -1,6 +1,6 @@
 <h1>Edit Your Profile</h1>
 
-<form action = '/profile/<%=current_user.id%>' name="method" method="post">
+<form action = '/users/profile/<%=current_user.id%>' name="method" method="post">
   <input type ="hidden" name="_method" value="patch"/>
 
 	<p>Tell Us About Yourself:</p><textarea rows="10" cols="40" name="user[aboutme]"><%=current_user.aboutme%></textarea>

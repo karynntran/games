@@ -18,19 +18,22 @@ class UsersController < ApplicationController
   end
 
 
-  get '/profile' do
-    current_user
+  get '/profile/:id' do
+    current_user = User.find(params[:id])
     @games = current_user.hangman_games
     erb :'users/profile'
   end
 
-  get '/profile/:id/edit'
-    current_user = User.find(id: current_user.id)
+  get '/profile/:id/edit' do
+    current_user = User.find(params[:id])
 
     erb :'/users/edit'
   end
 
-  patch '/' do
+  patch '/profile/:id' do
+    current_user = User.find(params[:id])
+    current_user.update(params[:user])
+    redirect 'users/profile/#{current_user.id}'
   end
 
 end
