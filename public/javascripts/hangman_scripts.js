@@ -131,9 +131,11 @@ function checkWinorLose(end_game){
 	else if (end_game == false){
 		if (confirm("Oh, no - the snowman melted! Play again?") == true) {
 			clearGame();
+			startGame();
 			window.location = "/hangman";
 		} else {
 			clearGame();
+			startGame();
 			window.location = "/";
 		};
 	}
