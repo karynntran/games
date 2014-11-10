@@ -87,7 +87,12 @@ td {
 	float: left;
 }
 
+#guess-letter {
+	display: none;
+}
+
 #guess-word {
+	display: none;
 	margin: 0 10px;
 	width: 450px;
 	float: right;

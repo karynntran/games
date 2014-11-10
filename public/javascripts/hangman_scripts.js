@@ -18,6 +18,7 @@ function startGame(){
 		method: "GET",  
 		dataType: "json",
 		success: function(data) {
+
 			var new_game = data;
 			displayGameState(new_game);
 			gameId = data.id;
@@ -177,6 +178,8 @@ $(function(){
 	gameId = undefined; // startGame defines this
 	$('.start-game').on("click", function(e){
     e.preventDefault(); // return false;    
+   	$('#guess-letter').fadeIn(2000);
+   	$('#guess-word').fadeIn(2000);
     clearGame();
     startGame();
   });
