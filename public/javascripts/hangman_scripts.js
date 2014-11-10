@@ -52,9 +52,9 @@ function makeLetterDivs(mystery_word){
 			var div = document.createElement("div");
 			div.style.width = "50px";
 			div.style.height = "50px";
-			div.style.border = "solid 1px black";
+			div.style.border = "solid 2px orange";
 			div.style.background = "white";
-			div.style.padding = "10px";
+			div.style.padding = "5px";
 			div.style.margin = "10px";
 			div.style.color = "darkblue";
 			div.style.size = "20px";
@@ -116,12 +116,16 @@ function checkWinorLose(end_game){
 		setTimeout(function(){
 			if (confirm("You saved the snowman! Play again?") == true) {
 	      clearGame();
+	      startGame();
 	      window.location = "/hangman";
 	    } else {
 	      clearGame();
+	      startGame();
 	      window.location = "/";
 			};
 		}, 5000);
+
+		buildSnowman();
 
 	}
 	else if (end_game == false){
@@ -155,21 +159,34 @@ function victorySnowflakes(numSnowflakes) {
       top: Math.floor(Math.random() * 200) - 50 + '%',
       left: Math.floor(Math.random() * 200) - 50 + '%',
       opacity: 0
-    }, 2000, 'linear');
+    }, 6000, 'linear');
   }
 }
 
 function buildSnowman(){
 	var $snowman = $('#snowman');
-	$snowman.attr("src", "/images/snowman4.jpg");
-	$snowman.attr("src", "/images/snowman3.jpg");
-	$snowman.attr("src", "/images/snowman2.jpg");
-	$snowman.attr("src", "/images/snowman1.jpg");
-	$snowman.attr("src", "/images/snowman4.jpg");
+
+	setTimeout(function(){
+		$snowman.attr("src", "/images/snowman4.jpg");
+	}, 1000);
+
+	setTimeout(function(){
+		$snowman.attr("src", "/images/snowman3.jpg");
+	}, 2000);
+
+	setTimeout(function(){
+		$snowman.attr("src", "/images/snowman2.jpg");
+	}, 3000);
+
+	setTimeout(function(){
+		$snowman.attr("src", "/images/snowman1.jpg");
+	}, 4000);
+
+	setTimeout(function(){
+		$snowman.attr("src", "/images/snowman1.jpg");
+	}, 5000);
+
 }
-
-
-
 
 
 
