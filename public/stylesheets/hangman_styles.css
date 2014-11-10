@@ -145,13 +145,11 @@ em {
 /* close commented backslash hack */
 
 
-
 .snowflake{
   position: absolute;
-  color: blue;
+  color: white;
   font-size: 5em;  
 }
-
 
 /*user css*/
 

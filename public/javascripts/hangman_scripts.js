@@ -153,15 +153,15 @@ function victorySnowflakes(numSnowflakes) {
     var snowFlake = $('<h1 class="snowflake">&#9784;</h1>');
     $('.melting-snowman').append(snowFlake);
 
-    var blue = Math.floor(Math.random() * 255);
-    var newColor = blue;
-    snowFlake.css({color: newColor})
+    var white = Math.floor(Math.random() * 255);
+    var newColorWhite = white;
+    snowFlake.css({color: newColorWhite})
 
     snowFlake.animate({
       top: Math.floor(Math.random() * 200) - 50 + '%',
       left: Math.floor(Math.random() * 200) - 50 + '%',
       opacity: 0
-    }, 6000, 'linear');
+    }, 5500, 'linear');
   }
 }
 
