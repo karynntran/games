@@ -192,7 +192,9 @@ $(function(){
   			guess: letter,
   			gameId: gameId
   		},
-  		success:updateGameState
+  		success:
+  			updateGameState
+  	
   			// console.log("happy")
 
   	});

@@ -98,7 +98,7 @@ h1 {
 
 /*index elements*/
 .index {
-	border: 2px dotted white;
+	border: 2px solid white;
 	padding: 10px;
 	margin: 20px;
 }
@@ -119,7 +119,7 @@ h1 {
 	height: 100px;
 	background-color: darkblue;
 	font-size: 20px;
-	border: 2px dotted white;
+	border: 2px solid white;
 }
 
 .link-text {
@@ -130,7 +130,7 @@ h1 {
 /*teaser image for game*/
 .image {
 	background-color: white;
-	border: 2px dotted orange;
+	border: 2px solid orange;
 }
 
 
