@@ -17,11 +17,15 @@
 
 .scoreboard {
 	width: 400px;
-	height: 100px;
+	height: 50px;
 	border: 1px solid lightgray;
 	margin: 10px auto;
 	text-align: center;
 	float: right;
+}
+
+.game-header {
+	color: darkblue;
 }
 
 /*structure 2*/
@@ -31,22 +35,27 @@
 	background-color: white;
 	font-size: 16px;
 	color:orange;
-	margin: 5px auto;
+	margin: 20px auto;
 }
 
 .game-board {
 	width: 1000px;
 	height: auto;
 	display: inline-block;
-	border: 2px dotted orange;
+	background-color: white;
+	border: 2px solid darkblue;
 	margin: 0 auto 5px auto;
 	padding-bottom: 5px;
+}
+
+#game-status {
+	color: orange;
 }
 
 .melting-snowman {
 	width: 250px;
 	height: 325px;
-	margin: 10px;
+	margin: 10px 20px 10px 0;
 	float: left;
 }
 
@@ -54,12 +63,6 @@
 	border-radius: 15px;
 }
 
-.random-word {
-	width: 650px;
-	height: auto;
-	margin: 10px;
-	float: left;
-}
 
 td {
 	text-align: center;
@@ -74,7 +77,7 @@ td {
 	width: 1000px;
 	height: 175px;
 	display: inline-block;
-	border: 1px solid lightgray;
+	border: 1px solid white;
 	margin: 0 auto;
 }
 
@@ -103,9 +106,20 @@ button {
 
 /*random word*/
 
+.random-word {
+	width: 650px;
+	height: auto;
+	padding: 10px 0;
+	float: left;
+}
+
 #mystery-word div {
 	display: inline-block;
-	text-align: center;
+	text-align: left;
+}
+
+em {
+	margin-top: 10px;
 }
 
 

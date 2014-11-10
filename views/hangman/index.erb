@@ -5,9 +5,6 @@
 
 <div class="scoreboard">
   <table>
-    <tr colspan="2">
-      <p><strong>Current User: <%=current_user.username%></strong></p>
-    </tr>
     <tr>
       <td>Wins</td>
       <td>Losses</td>
@@ -44,17 +41,18 @@
 	</div>
 
   <!-- game status -->
-  <h3>Game Status...</h3>
+  
+  <h3 class="game-header">GAME STATUS</h3>
   <div id="game-status">
   </div>
 
 	<!-- random word is generated -->
-	<div class="random-word">
-		<h3>Your Mystery Word Is...</h3>
+	<h3 class="game-header">YOUR MYSTERY WORD</h3>
+  <div class="random-word">
 		<div id="mystery-word">
 
 		</div>
-      <em>Hint: All the words are winter-themed!</em>  
+    <em>Hint: All the words are winter-themed!</em>  
 	</div>
 
 </div>

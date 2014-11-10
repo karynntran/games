@@ -105,16 +105,12 @@ function displayResults(game) {
 }
 
 function checkWinorLose(end_game){
-	debugger;
 	console.log(end_game);
 	if (end_game == true){
 		var handle = setInterval(function(){
 			victorySnowflakes(10);
 		}, 10);
 
-		// setTimeout(function(){
-		// 	clearInterval(handle);
-		// }, 3000);
 
 		setTimeout(function(){
 			if (confirm("You saved the snowman! Play again?") == true) {
@@ -196,8 +192,9 @@ $(function(){
   			guess: letter,
   			gameId: gameId
   		},
-  		success: updateGameState
+  		success:updateGameState
   			// console.log("happy")
+
   	});
   });
 

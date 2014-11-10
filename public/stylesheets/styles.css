@@ -93,6 +93,7 @@ h1 {
 .welcome-msg-link {
 	background-color: white;
 	text-decoration: none;
+	padding: 10px;
 }
 
 /*index elements*/
