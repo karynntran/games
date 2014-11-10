@@ -168,23 +168,23 @@ function buildSnowman(){
 
 	setTimeout(function(){
 		$snowman.attr("src", "/images/snowman4.jpg");
-	}, 1000);
+	}, 500);
 
 	setTimeout(function(){
 		$snowman.attr("src", "/images/snowman3.jpg");
-	}, 2000);
+	}, 1500);
 
 	setTimeout(function(){
 		$snowman.attr("src", "/images/snowman2.jpg");
+	}, 2500);
+
+	setTimeout(function(){
+		$snowman.attr("src", "/images/snowman1.jpg");
 	}, 3000);
 
 	setTimeout(function(){
-		$snowman.attr("src", "/images/snowman1.jpg");
-	}, 4000);
-
-	setTimeout(function(){
-		$snowman.attr("src", "/images/snowman1.jpg");
-	}, 5000);
+		$snowman.attr("src", "/images/snowman0.jpg");
+	}, 3500);
 
 }
 
