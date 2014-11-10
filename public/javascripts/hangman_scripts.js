@@ -183,21 +183,19 @@ $(function(){
 
   $('.guess-letter').on('click', function(e) {
   	e.preventDefault();
-  	var letter = $(this).data('letter');  
+  	var $letter = $(this).data('letter');
   	$.ajax({
   		url: '/hangman/letter-guess',
   		method: 'PATCH',
   		dataType: 'json',
   		data: {
-  			guess: letter,
+  			guess: $letter,
   			gameId: gameId
   		},
-  		success:
-  			updateGameState
-  	
+  		success: updateGameState
   			// console.log("happy")
-
   	});
+  	$('.guess-letter:contains("' + $letter + '")').hide();
   });
 
   $('.guess-word').on('click', function(e)
@@ -213,7 +211,6 @@ $(function(){
   			gameId: gameId	
   		},
   		success: updateGameState
-
  	 });
   });
 });
